@@ -1,0 +1,6 @@
+
+<h1>User info</h1>
+<%= attachment_image_tag @user, :profile_image, :fill,60,60,fallback: "no_image.jpg" %>
+<%= @user.name %>
+<%= @user.introduction %>
+

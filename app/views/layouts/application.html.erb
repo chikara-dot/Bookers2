@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Bookers2</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  </head>
+<% if user_signed_in? %>
+  <body>
+  <div class="container-fluid">
+   <div class="row">
+     <div class="col-lg-12" style="background-color: #343a40 !important;">
+    <header class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand p-3 text-light" href="/">Bookers</a>
+
+        <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+      <%= link_to "Home" ,new_user_session_path, class:"fas fa-home nav-link text-light"%>
+      </li>
+      <li class="nav-item">
+      <%= link_to "Users" ,users_path, class:"fas fa-users nav-link text-light" %>
+      </li>
+      <li class="nav-item">
+      <%= link_to "Books" ,books_path, class:"fas fa-book-open nav-link text-light" %>
+      </li>
+      <li class="nav-item">
+      <%= link_to "logout" ,destroy_user_session_path, method: :delete, class:"fas fa-sign-out-alt nav-link text-light" %>
+      </li>
+      </ul>
+   </div>
+  </div>
+  </nav>
+    </header>
+  <% else %>
+   <body>
+  <div class="container-fluid">
+   <div class="row">
+     <div class="col-lg-12" style="background-color: #343a40 !important;">
+    <header class="container">
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand p-3 text-light" href="/">Bookers</a>
+
+        <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+      <%= link_to "Home" ,new_user_session_path, class:"fas fa-home nav-link text-light"%>
+      </li>
+      <li class="nav-item">
+      <%= link_to "About" ,home_about_path, class:"fas fa-link nav-link text-light" %>
+      </li>
+      <li class="nav-item">
+      <%= link_to "sign up" ,new_user_registration_path, class:"fas fa-user-plus nav-link text-light" %>
+      </li>
+      <li class="nav-item">
+      <%= link_to "login" ,user_session_path, class:"fas fa-sign-in-alt nav-link text-light" %>
+      </li>
+      </ul>
+   </div>
+  </div>
+  </nav>
+    </header>
+
+ <% end %>
+
+ <main><%= yield %></main>
+
+ <footer>
+  <div class="container mt-5">
+    <div class="row">
+  <div class="mx-auto">
+   <p>CopyRight Infratop.inc</p>
+   </div>
+   </div>
+   </div>
+ </footer>
+
+
+  </body>
+</html>
