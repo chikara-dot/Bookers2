@@ -1,1 +1,22 @@
+<%= render 'books/list', user: @user ,book: @book %>
 
+<div class="col-md-8 offset-md-1 mt-3">
+<h2>Books</h2>
+<table class="table">
+ <thead>
+     <tr>
+         <th>Title</th>
+         <th>Opinion</th>
+     </tr>
+ </thead>
+ <tbody>
+     <tr>
+        <td><%= attachment_image_tag @user, :profile_image , format: 'jpeg', fallback: "no_image.jpg", size: "50x50" %></td>
+        <% @books.each do |book| %>
+        <td><%= book.title %></td>
+        <td><%= book.body %></td>
+    <% end %>
+     </tr>
+ </tbody>
+</table>
+</div>
