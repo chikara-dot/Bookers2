@@ -5,13 +5,13 @@
 <h2>User info</h2>
 
 
-  <%= attachment_image_tag user, :profile_image, size: "60x",fallback: "no_image.jpg" %>
+  <%= attachment_image_tag user, :profile_image, size: "85x85",fallback: "no_image.jpg" %>
   <table class="table">
     <tr>
      <th>name</th>   <th><%= user.name %></th>
     </tr>
     <tr>
-     <th>introduction<%= user.introduction %></th>
+     <th>introduction</th> <th><%= user.introduction %></th>
     </tr>
   </table>
 
