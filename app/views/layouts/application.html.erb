@@ -11,17 +11,17 @@
 
   </head>
 
- 
+
   <header class="container-fluid">
    <div class="row">
      <div class="col-lg-12" style="background-color: #343a40 !important;">
-   
+
       <nav class="navbar navbar-expand-lg navbar-light">
         <a class="navbar-brand p-3 text-light" href="/">Bookers</a>
         <% if user_signed_in? %>
         <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-      <%= link_to "Home" ,new_user_session_path, class:"fas fa-home nav-link text-light"%>
+      <%= link_to "Home" ,user_path(current_user), class:"fas fa-home nav-link text-light"%>
       </li>
       <li class="nav-item">
       <%= link_to "Users" ,users_path, class:"fas fa-users nav-link text-light" %>
@@ -38,11 +38,11 @@
   </nav>
   <% else %>
 
-  
-  
+
+
         <ul class="navbar-nav ml-auto">
       <li class="nav-item">
-      <%= link_to "Home" ,new_user_session_path, class:"fas fa-home nav-link text-light"%>
+      <%= link_to "Home" ,root_path, class:"fas fa-home nav-link text-light"%>
       </li>
       <li class="nav-item">
       <%= link_to "About" ,home_about_path, class:"fas fa-link nav-link text-light" %>
@@ -59,7 +59,7 @@
   </nav>
   <% end %>
     </header>
- 
+
  <body>
  <main><%= yield %></main>
 
