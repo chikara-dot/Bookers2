@@ -27,7 +27,7 @@
 <%= link_to "",edit_user_path(user.id), class:"btn btn-outline-secondary btn-block fas fa-user-cog " %>
 
 <h2>New book</h2>
-<%= form_with model:book,url: '/books', method: :post, local:true do |f| %>
+<%= form_with model:book, local:true do |f| %>
 <h5>Title</h5>
 <%= f.text_field :title %>
 <h5>Opinion</h5>
