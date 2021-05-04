@@ -12,4 +12,9 @@ class Book < ApplicationRecord
 
   validates :title, presence: true
   validates :body, presence: true
+
+  def self.search(search)
+      return Book.all unless search
+      Book.where(['title LIKE ?', "%#{search}%"])
+  end
 end
