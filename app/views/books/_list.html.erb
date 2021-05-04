@@ -26,10 +26,10 @@
 
 
     <tr>
-      <td><%= link_to "follows: #{user.following_user.count}", follows_path %></td>
+      <td><%= link_to "follows: #{user.following_user.count}", follows_path(user.id) %></td>
     </tr>
     <tr>
-      <td><%= link_to "followers: #{user.follower_user.count}", followers_path %></td>
+      <td><%= link_to "followers: #{user.follower_user.count}", followers_path(user.id) %></td>
     </tr>
 
     <tr><td>
