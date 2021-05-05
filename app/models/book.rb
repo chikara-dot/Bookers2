@@ -13,8 +13,20 @@ class Book < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true
 
-  def self.search(search)
-      return Book.all unless search
-      Book.where(['title LIKE ?', "%#{search}%"])
+  def self.search(search, word)
+    if search == "forward_match"
+      @book = Book.where("title LIKE?","#{word}%")
+
+    elsif search == "backward_match"
+      @book = Book.where("title LIKE?","%#{word}")
+
+    elsif search == "perfect_match"
+      @book = Book.where("#{word}")
+
+    elsif search == "partial_match"
+      @book = Book.where("title LIKE?","%#{word}%")
+    else
+      @book = Book.all
+    end
   end
 end
