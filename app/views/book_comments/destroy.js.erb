@@ -1,1 +1,3 @@
 $('#comment_buttons_<%= @book.id %>').html("<%= j(render "book_comments/comment", book: @book) %>");
+
+$('#count_<%= @book.id %>').html("<%= j(render "book_comments/count", book: @book) %>");

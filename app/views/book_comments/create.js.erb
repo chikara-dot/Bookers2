@@ -1,4 +1,4 @@
 $('#comment_buttons_<%= @book.id %>').html("<%= j(render "book_comments/comment", book: @book) %>");
 $('.js-form')[0].reset();
 
-&('#count_<%= @book.id %>').html("<%= j(render "book_comments/count", book: @book) %>");
+$('#count_<%= @book.id %>').html("<%= j(render "book_comments/count", book: @book) %>");
